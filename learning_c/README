@@ -1,0 +1,24 @@
+Running C
+
+(I'm on Mac OSX Snow Leopard)
+
+gcc filename.c
+./a.out
+
+ex:
+gcc hello_world.c
+./a.out
+
+OR
+
+gcc -o desired_executable_name filename.c
+./desired_executable_name
+
+ex:
+gcc -o hello_world hello_world.c
+./hello_world
+
+or
+
+gcc -o mark_can_write_c hello_world.c
+./mark_can_write_c
