@@ -1,0 +1,9 @@
+A place to play with using C in Ruby (oh and learning C as well)
+
+Currently contains:
+
+full_text_search: My attempt at basic full text search and how to speed up a Ruby implementation with C. This is where I think I'll spend the most time hacking (and banging my head against the wall)
+
+array_test and primes: Examples from the interwebs that I worked through to get my feet wet
+
+learning_c: Examples for various sources about C.
