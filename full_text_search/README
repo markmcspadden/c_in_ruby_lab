@@ -1,0 +1,24 @@
+About:
+
+Trying basic full text search.
+
+Start with Ruby, and replace pieces with C. (I'm not claiming the Ruby is efficient as written, but it's a place to start.)
+
+Using simple weighting (w=term_frequency*inverse_document_frequency) and ranking (r=w*query_frequency)
+
+If you'd like to read up more on that I find the MySQL internals wiki is a good place to digest: http://forge.mysql.com/wiki/MySQL_Internals_Algorithms#Full-text_Search
+
+---
+
+Usage:
+
+$ ruby extconf.rb
+$ make
+$ ruby full_text_search_test.rb
+$ ruby benchmark.rb 
+
+---
+
+Attempts:
+
+Attempt #1: Focus on #to_words. Directly use rb_str_split in C to split a string into an array on the spaces
