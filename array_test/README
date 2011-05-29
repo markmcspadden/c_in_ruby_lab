@@ -1,0 +1,7 @@
+From http://www.ruby-doc.org/docs/ProgrammingRuby/html/ext_ruby.html
+
+To make it all work:
+
+$ ruby extconf.rb
+$ make
+$ ruby test_using_c.rb
