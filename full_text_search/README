@@ -21,4 +21,6 @@ $ ruby benchmark.rb
 
 Attempts:
 
+Attempt #2: Continue on #to_words. Create custom_rb_str_split_m that only handles the case of splitting a string on the spaces. Seems to increase performance by about 5% on the 1000 record benchmark. (Even showed 10% on a single 10000 record run.)
+
 Attempt #1: Focus on #to_words. Directly use rb_str_split in C to split a string into an array on the spaces
