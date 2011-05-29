@@ -1,0 +1,7 @@
+From http://www.pmamediagroup.com/2010/07/making-superfast-things-in-ruby-using-c-extensions/
+
+To make it all work:
+
+$ ruby extconf.rb
+$ make
+$ ruby benchmark.rb
