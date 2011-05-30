@@ -15,11 +15,13 @@ Usage:
 $ ruby extconf.rb
 $ make
 $ ruby full_text_search_test.rb
-$ ruby benchmark.rb 
+$ ruby benchmarks/all.rb 
 
 ---
 
 Attempts:
+
+Attempt #3: Focus on #document_frequency. Build implementation in C that still uses alot of the Ruby C stuff. C implementation seems to increase performance on the #document_frequency method by 25%.
 
 Attempt #2: Continue on #to_words. Create custom_rb_str_split_m that only handles the case of splitting a string on the spaces. Seems to increase performance by about 5% on the 1000 record benchmark. (Even showed 10% on a single 10000 record run.)
 

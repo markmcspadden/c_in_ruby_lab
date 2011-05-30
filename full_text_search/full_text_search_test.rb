@@ -1,6 +1,6 @@
 require 'test/unit'
 
-require 'full_text_search'
+require File.expand_path(File.dirname(__FILE__) + '/full_text_search')
 
 class FullTextSearch < Test::Unit::TestCase
   def setup
@@ -24,6 +24,12 @@ class FullTextSearch < Test::Unit::TestCase
     assert_equal ["this", "is", "an", "apple."], RubyFullTextSearchString.new("This is an apple.".downcase).to_words
   end
   
+  def test_ruby_document_frequency
+    assert_equal (1/3.0), RubyFullTextSearchString.new("fall").document_frequency(@r_corpus)
+    assert_equal (2/3.0), RubyFullTextSearchString.new("apple").document_frequency(@r_corpus)
+    assert_equal (1/3.0), RubyFullTextSearchString.new("orange").document_frequency(@r_corpus)
+  end
+  
   def test_ruby_single_word_query    
     result = RubyFullTextSearchString.new("apple").search_rank(@r_corpus)
     result.first[0] = (result.first.first*100).round/100.0 # Silly
@@ -41,6 +47,12 @@ class FullTextSearch < Test::Unit::TestCase
   
   def test_c_to_words
     assert_equal ["this", "is", "an", "apple."], CFullTextSearchString.new("This is an apple.".downcase).to_words
+  end
+  
+  def test_c_document_frequency
+    assert_equal (1/3.0), CFullTextSearchString.new("fall").document_frequency(@c_corpus)
+    assert_equal (2/3.0), CFullTextSearchString.new("apple").document_frequency(@c_corpus)
+    assert_equal (1/3.0), CFullTextSearchString.new("orange").document_frequency(@c_corpus)
   end
   
   def test_c_single_word_query    
